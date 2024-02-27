@@ -54,6 +54,10 @@ function clearInputFieldEl() {
   inputFieldEl.value = "";
 }
 
+newEl.addEventListener("click", function () {
+  newEl.classList.add("crossed");
+});
+
 function appendItemToShoppingListEl(item) {
   let itemID = item[0];
   let itemValue = item[1];
@@ -61,10 +65,6 @@ function appendItemToShoppingListEl(item) {
   let newEl = document.createElement("li");
 
   newEl.textContent = itemValue;
-
-  newEl.addEventListener("click", function () {
-    newEl.classList.add("crossed");
-  });
 
   newEl.addEventListener("dblclick", function () {
     let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
