@@ -62,6 +62,10 @@ function appendItemToShoppingListEl(item) {
 
   newEl.textContent = itemValue;
 
+  newEl.addEventListener("click", function () {
+    newEl.classList.add("crossed");
+  });
+
   newEl.addEventListener("dblclick", function () {
     let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
 
