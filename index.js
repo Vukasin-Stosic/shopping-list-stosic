@@ -20,12 +20,20 @@ const inputFieldEl = document.getElementById("input-field");
 const addButtonEl = document.getElementById("add-button");
 const shoppingListEl = document.getElementById("shopping-list");
 
-addButtonEl.addEventListener("click", function () {
+function pushingToShopingList() {
   let inputValue = inputFieldEl.value;
 
   push(shoppingListInDB, inputValue);
 
   clearInputFieldEl();
+}
+
+addButtonEl.addEventListener("click", pushingToShopingList);
+
+inputFieldEl.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    pushingToShopingList();
+  }
 });
 
 onValue(shoppingListInDB, function (snapshot) {
