@@ -50,7 +50,7 @@ onValue(shoppingListInDB, function (snapshot) {
       appendItemToShoppingListEl(currentItem);
     }
   } else {
-    shoppingListEl.innerHTML = "No items here... yet";
+    shoppingListEl.innerHTML = "Lista je prazna...";
   }
 });
 
