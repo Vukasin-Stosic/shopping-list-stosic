@@ -54,8 +54,10 @@ function clearInputFieldEl() {
   inputFieldEl.value = "";
 }
 
+let newEl = document.querySelector("li");
+
 newEl.addEventListener("click", function () {
-  newEl.classList.add("crossed");
+  newEl.classList.toggle("crossed");
 });
 
 function appendItemToShoppingListEl(item) {
